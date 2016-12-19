@@ -1,5 +1,5 @@
 /**
- * Created by Bojan on 10/17/2016.
+ * Created by Bojan on 12/19/2016.
  */
 (function (angular) {
   'use strict';
@@ -13,13 +13,12 @@
 
   function registerState($stateProvider) {
 
-    $stateProvider.state('student', {
-      url: '/students',
-      templateUrl: 'app/student/student.view.html',
-      controller: 'StudentController',
+    $stateProvider.state('course', {
+      url: '/courses',
+      templateUrl: 'app/course/course.view.html',
+      controller: 'CourseController',
       controllerAs: 'vm'
     });
   }
 
 })(angular);
-

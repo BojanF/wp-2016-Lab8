@@ -18,9 +18,12 @@ var fs = require("fs");
 
 var JS_APP = [
   'app/app.js',
-  'app/c1/c1.state.js',
+  /*'app/c1/c1.state.js',
   'app/c1/first.controller.js',
-  'app/c1/second.controller.js',
+  'app/c1/second.controller.js',*/
+  'app/course/course.state.js',
+  'app/course/course.controller.js',
+  'app/course/course.service.remote.js',
   'app/group/group.state.js',
   'app/group/group.controller.js',
   //'app/group/group.local.factory.js',//ova treba da se smeni lab6
@@ -28,7 +31,8 @@ var JS_APP = [
   'app/default-page/**.js',
   'app/student/student.controller.js',
   'app/student/student.state.js',
-  'app/student/student.local.factory.js',
+  //'app/student/student.local.factory.js',
+  'app/student/student.service.remote.js',
   'app/directives/showcase-directive/showcase-directive.directive.js',
   'app/directives/wp-combo/wp-combo.directive.js',
   'app/components/wp-input/wp-input-component.component.js',
@@ -39,6 +43,7 @@ var JS_APP = [
 var TEMPLATES_SRC = [
   'app/group/group.view.html',
   'app/student/student.view.html',
+  'app/course/course.view.html',
   'app/default-page/**.html'
 ];
 

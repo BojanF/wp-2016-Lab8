@@ -19,14 +19,6 @@ public class GroupController {
     @Autowired
     private GroupService groupService;
 
-
-    /*Group g = new Group((long)1, "G1", 20);
-    groupService.save(g);*/
-    /*public GroupController(GroupServiceImpl groupService) {
-        this.groupService = groupService;
-    }*/
-
-
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody  List<Group> findAll(){
         return groupService.findAll();

@@ -2,6 +2,7 @@ package mk.ukim.finki.wp.persistence.impl;
 
 import mk.ukim.finki.wp.model.Group;
 import mk.ukim.finki.wp.persistence.IGroupRepository;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,10 +15,11 @@ import java.util.List;
 /**
  * Created by Bojan on 12/15/2016.
  */
+
 @Repository
 public class GroupRepositoryImpl implements IGroupRepository {
 
-    @PersistenceContext(name = "wp")
+    @PersistenceContext
     private EntityManager entityManager;
 
     public List<Group> findAll() {

@@ -24,13 +24,13 @@
     vm.saveErrMsg = null;
     vm.LabGroups = [];
     loadStudents();
-    loadGroups();
+    //loadGroups();
 
-    function loadGroups(){
+    /*function loadGroups(){
       GroupService.getAll().then(function(data){
         vm.LabGroups = data;
       });
-    }
+    }*/
 
 
     function loadStudents() {

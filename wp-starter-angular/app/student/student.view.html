@@ -2,7 +2,7 @@
 <!--<h1> STUDENT PROBA !!!gulp</h1>-->
 
 
-<div class="panel panel-success">
+<div class="panel panel-primary">
   <div class="panel-heading">
     <h4>Add or update {{vm.title}}</h4>
   </div>
@@ -11,7 +11,7 @@
 
       <div class="form-group">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <!--<label>Name</label>
             <input class="form-control" type="text" ng-required="true" ng-model="vm.studentEntity.name">-->
 
@@ -23,14 +23,14 @@
                       wp-focus="true">
             </wp-input>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-12">
             <!--<label> Surname </label>
-            <input class="form-control" type="text" ng-required="true" ng-model="vm.studentEntity.surename">-->
+            <input class="form-control" type="text" ng-required="true" ng-model="vm.studentEntity.surname">-->
 
             <!-- komponentata wp-input ja vrski istata rabota kako zakomentiranoto parce kod gore-->
-            <wp-input wp-label="Surename"
+            <wp-input wp-label="Surname"
                       wp-type="text"
-                      wp-model="vm.studentEntity.surename"
+                      wp-model="vm.studentEntity.surname"
                       wp-required="true">
             </wp-input>
           </div>
@@ -39,7 +39,7 @@
 
       <div class="form-group">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <!--<label> Index </label>
             <input type="text" class="form-control" ng-required="true" ng-model="vm.studentEntity.index">-->
 
@@ -50,7 +50,7 @@
                       wp-required="true">
             </wp-input>
           </div>
-          <!-- dropdown za grupite-->
+          <!-- dropdown za grupite
           <div class="col-md-6">
             <!--<label>Select your Lab group</label>
             <ui-select ng-model="vm.studentEntity.LabGroup"
@@ -66,9 +66,9 @@
                 {{group.name}}
               </ui-select-choices>
             </ui-select>-->
-            <!-- mesto zakomentiranoto gore -->
-            <group-select gs-model="vm.studentEntity.LabGroup"></group-select>
-          </div>
+            <!-- mesto zakomentiranoto gore ->
+             <group-select gs-model="vm.studentEntity.LabGroup"></group-select>
+          </div>-->
 
         </div>
       </div>
@@ -97,26 +97,26 @@
 </div>
 <!-- Lista od studenti -->
 <div class="row">
-    <div class="col-md-12">
+  <div class="col-md-12">
     <table st-table="studentEntities" st-safe-src="vm.studentEntities" ng-show="vm.studentEntities.length>0" class="table table-bordered table-striped">
       <thead>
         <tr>
           <th st-sort="name">Name</th>
-          <th st-sort="surename">Surename</th>
+          <th st-sort="surname">surname</th>
           <th st-sort="index">Index</th>
-          <th st-sort="LabGroup.name">Group</th>
+
           <th>Actions</th>
         </tr>
         <tr>
-          <th colspan="5"> <input placeholder="search by index..." st-search="index" st-delay="400" type="search" class="form-control"/> </th>
+          <th colspan="4"> <input placeholder="search by index..." st-search="index" st-delay="400" type="search" class="form-control"/> </th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="e in studentEntities">
           <td>{{e.name}}</td>
-          <td>{{e.surename | uppercase}}</td>
+          <td>{{e.surname | uppercase}}</td>
           <td>{{e.index}}</td>
-          <td>{{e.LabGroup.name}} </td>
+
           <td>
             <button class="btn btn-xs btn-default"
                     ng-click="vm.edit(e)">
@@ -131,7 +131,7 @@
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="5" class="text-center">
+          <td colspan="4" class="text-center">
             <div st-pagination="" st-items-by-page="3" st-displayed-pages="3"></div>
           </td>
         </tr>

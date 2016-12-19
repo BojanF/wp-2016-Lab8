@@ -2,7 +2,6 @@ package mk.ukim.finki.wp.service.mk.ukim.finki.wp.service.impl;
 
 import mk.ukim.finki.wp.model.Group;
 import mk.ukim.finki.wp.persistence.IGroupRepository;
-import mk.ukim.finki.wp.persistence.impl.GroupRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
