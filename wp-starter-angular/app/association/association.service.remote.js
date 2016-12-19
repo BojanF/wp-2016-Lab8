@@ -35,24 +35,28 @@
     return service;
 
 
-    function saveFn(studentEntity) {
-      if(studentEntity.id === undefined) {
+    function saveFn(associationEntity) {
+      /*if(studentEntity.id === undefined) {
         return resource.save(studentEntity, function(data){
           studentEntity.id=data.id;
         }).$promise;
-      }
-      return updateFn(studentEntity);
+      }*/
       $log.debug('in save fn');
+      return updateFn(associationEntity);
+
 
     }
 
-    function updateFn(studentEntity) {
-      if (studentEntity.id === undefined) {
+    function updateFn(associationEntity) {
+      /*if (studentEntity.id === undefined) {
         $log.debug("IFFFF");
         return saveFn(studentEntity).$promise;
       }
-      $log.debug("UPDATE");
-      return resource.update({id: studentEntity.id}, studentEntity).$promise;
+      $log.debug("UPDATE");*/
+      $log.debug('in update fn');
+      var course = associationEntity.courseEntity;
+      $log.debug(course);
+      return resourceCourses.update({id: associationEntity.studentEntity.id}, course, associationEntity.studentEntity).$promise;
     }
 
 

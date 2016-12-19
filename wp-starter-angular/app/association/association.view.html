@@ -42,12 +42,12 @@
                              title="Choose student">
                     <ui-select-match
                       placeholder="Select student...">
-                      <span>{{$select.selected.name}}</span>
+                      <span>{{$select.selected.name+" "+$select.selected.surname}}</span>
                     </ui-select-match>
                     <ui-select-choices
                       repeat="item in (vm.studentEntities | filter:$select.search )"
                       position="auto">
-                      {{item.name}}
+                      {{item.name+" "+item.surname+" "+item.index}}
                     </ui-select-choices>
                   </ui-select>
                 </div>

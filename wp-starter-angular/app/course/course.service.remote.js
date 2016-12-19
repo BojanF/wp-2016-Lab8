@@ -47,7 +47,7 @@
         return saveFn(courseEntity).$promise;
       }
       $log.debug("UPDATE");
-      return resource.update({id: courseEntity.id}, courseEntity).$promise;
+      return resource.update({id: courseEntity.id}, courseEntity, null).$promise;
 
     }
 
