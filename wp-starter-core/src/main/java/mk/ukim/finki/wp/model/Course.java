@@ -3,6 +3,8 @@ package mk.ukim.finki.wp.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Bojan on 12/18/2016.
@@ -25,7 +27,7 @@ public class Course {
                 joinColumns = @JoinColumn(name = "course_id"),
                 inverseJoinColumns = @JoinColumn(name = "student_id")
               )
-    private Collection<Student> students;
+    private Set<Student> students = new HashSet<Student>();
 
     @OneToOne(optional = true)
     private Course course;
@@ -39,7 +41,7 @@ public class Course {
         return name;
     }
 
-    public Collection<Student> getStudents() {
+    public Set<Student> getStudents() {
         return students;
     }
 
@@ -55,7 +57,7 @@ public class Course {
         this.name = name;
     }
 
-    public void setStudents(Collection<Student> students) {
+    public void setStudents(Set<Student> students) {
         this.students = students;
     }
 

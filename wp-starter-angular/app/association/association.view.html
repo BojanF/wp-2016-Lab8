@@ -1,10 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--<h1> STUDENT PROBA !!!gulp</h1>-->
 
-</body>
-</html>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h4>{{vm.title}}</h4>
+  </div>
+  <form ng-submit="vm.save()" name="form">
+    <div class="panel-body">
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Course</label>
+                  <ui-select ng-model="vm.associationEntity.courseEntity"
+                             title="Choose course">
+                    <ui-select-match
+                      placeholder="Select course...">
+                      <span>{{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices
+                      repeat="item in (vm.courseEntities | filter:$select.search )"
+                      position="auto">
+                      {{item.name}}
+                    </ui-select-choices>
+                  </ui-select>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Student</label>
+                  <ui-select ng-model="vm.associationEntity.studentEntity"
+                             title="Choose student">
+                    <ui-select-match
+                      placeholder="Select student...">
+                      <span>{{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices
+                      repeat="item in (vm.studentEntities | filter:$select.search )"
+                      position="auto">
+                      {{item.name}}
+                    </ui-select-choices>
+                  </ui-select>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer text-right">
+      <div class="panel panel-danger text-center text-danger" ng-show="vm.saveErrMsg">
+        {{vm.saveErrMsg}}
+      </div>
+      <div class="panel panel-success text-center text-success" ng-show="vm.saveOkMsg">
+        {{vm.saveOkMsg}}
+      </div>
+      <button class="btn btn-default" type="reset"
+              ng-click="vm.clear()">
+        <i class="fa fa-fw fa-refresh"></i>
+        Clear
+      </button>
+      <button class="btn btn-primary"
+              type="submit"
+              ng-disabled="form.$invalid">
+        <i class="fa fa-fw fa-save"></i>
+        Save
+      </button>
+    </div>
+
+  </form>
+</div>
+
